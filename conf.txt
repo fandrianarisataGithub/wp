@@ -1,0 +1,12 @@
+nom bdd = "bdd_wp"
+username bdd = root
+pass bdd = ""
+adresse de la base de donnée : localhost
+prefixe de la base : f_
+
+// pour le site
+
+titre du site = monsite
+identifiant admin : monsite
+pass : codemonsite&2608 
+email : enac.fenitriniaina@gmail.com
