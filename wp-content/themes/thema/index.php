@@ -1,66 +1,23 @@
-
-		<?php get_header() ?>
-		<div class="row">
+<?php get_header() ?>
+<div class="row">
+	<?php if (have_posts()) : ?>
+		<?php while (have_posts()) : the_post(); ?>
 			<div class="liste_blog col-lg-4">
-				<h2 class="text-center">Titre</h2>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" alt="" width="200" class="img-responsive img_blog">
-				<p class="text-justify">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam obcaecati sapiente, 
-					nam illo quaerat sequi repellat officia ducimus amet dolorem accusamus vero earum debitis
-				 	expedita dolorum animi sit voluptatum totam!
-				</p>
+				<h2 class="text-center"><?php the_title() ?></h2>
+				<?php the_post_thumbnail("medium", [
+					"class" => "img-responsive",
+					"alt"	=> "image pour ce post",
+					"style"	=> "height : auto"
+				]) ?>
+				<?php the_content() ?>
 				<div class="button">
-					<a href="#" class="link_blog btn btn-primary">Détail</a>
+					<a href="<?php the_permalink() ?>" class="link_blog btn btn-primary">Détail</a>
 				</div>
 			</div>
-			<div class="liste_blog col-lg-4">
-				<h2 class="text-center">Titre</h2>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" alt="" width="200" class="img-responsive img_blog">
-				<p class="text-justify">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam obcaecati sapiente, 
-					nam illo quaerat sequi repellat officia ducimus amet dolorem accusamus vero earum debitis
-				 	expedita dolorum animi sit voluptatum totam!
-				</p>
-				<div class="button">
-					<a href="#" class="link_blog btn btn-primary">Détail</a>
-				</div>
-			</div>
-			<div class="liste_blog col-lg-4">
-				<h2 class="text-center">Titre</h2>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" alt="" width="200" class="img-responsive img_blog">
-				<p class="text-justify">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam obcaecati sapiente, 
-					nam illo quaerat sequi repellat officia ducimus amet dolorem accusamus vero earum debitis
-				 	expedita dolorum animi sit voluptatum totam!
-				</p>
-				<div class="button">
-					<a href="#" class="link_blog btn btn-primary">Détail</a>
-				</div>
-			</div>
-			<div class="liste_blog col-lg-4">
-				<h2 class="text-center">Titre</h2>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" alt="" width="200" class="img-responsive img_blog">
-				<p class="text-justify">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam obcaecati sapiente, 
-					nam illo quaerat sequi repellat officia ducimus amet dolorem accusamus vero earum debitis
-				 	expedita dolorum animi sit voluptatum totam!
-				</p>
-				<div class="button">
-					<a href="#" class="link_blog btn btn-primary">Détail</a>
-				</div>
-			</div>
-			<div class="liste_blog col-lg-4">
-				<h2 class="text-center">Titre</h2>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" alt="" width="200" class="img-responsive img_blog">
-				<p class="text-justify">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam obcaecati sapiente, 
-					nam illo quaerat sequi repellat officia ducimus amet dolorem accusamus vero earum debitis
-				 	expedita dolorum animi sit voluptatum totam!
-				</p>
-				<div class="button">
-					<a href="#" class="link_blog btn btn-primary">Détail</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<?php get_footer() ?>
+		<?php endwhile ?>
+		<?php else : ?>
+			<h1>Pas d'article'</h1>
+	<?php endif ?>
+</div>
+</div>
+<?php get_footer() ?>
