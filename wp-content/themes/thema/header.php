@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
     <?php wp_head() ?>
 </head>
 
@@ -15,8 +17,7 @@
             <span class="navbar-toggler-icon"> </span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarColor02">
-            <ul class="navbar-nav mr-auto">
+        <!--<ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">
                         <span>Home</span>
@@ -57,13 +58,14 @@
                         </a>
                     </div>
                 </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Chercher">
-                <button class="btn btn-secondaire my-2 my-sm-0" type="submit">
-                    <span>Chercher</span>
-                </button>
-            </form>
-        </div>
+            </ul> -->
+        <?php wp_nav_menu([
+            "theme_location"    => "id_menu_header",
+            "menu_class"        => "navbar-nav mr-auto",
+            "container_class"   => "collapse navbar-collapse",
+            "container_id"      => "navbarColor02"
+        ]) ?>
+        <?= get_search_form() ?>
+
     </nav>
     <div class="container">
